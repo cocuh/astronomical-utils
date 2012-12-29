@@ -26,18 +26,18 @@ def ecliptic_longitude(now_JST=time.time()-9*60*60):
     return lunar_phase
 
 def lunar_phase():
-    """その日の月相をintで返す"""
+    """その日の月相をintで返す[0-27]"""
     now_unix = time.time()
     localtime = time.localtime()
     today_sec = localtime[3]*60*60+localtime[4]*60+localtime[5]
     #今日が始まってからの秒数
 
-    midnight_sec = time.time() - today_sec
-    midnight_ecliptic_longitude = ecliptic_longitude(midnight_sec)
-    #今日の0時の黄経差
+    noon_sec = time.time() - today_sec + 12*60*60
+    noon_ecliptic_longitude = ecliptic_longitude(noon_sec)
+    noon_phase = noon_ecliptic_longitude*28/360
+    #今日の12時の黄経差
 
-    longitude_per_day = 360.0/interval_day
-    phase = int(midnight_ecliptic_longitude//longitude_per_day)
+    phase = int(round(noon_phase))%28
     return phase
 
 def main():
