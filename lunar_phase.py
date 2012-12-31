@@ -3,11 +3,11 @@
 import time
 
 
-moon_name = {0:'新月',7:'半月(上弦)',14:'満月',21:'半月(下弦)'}
-message = "\033[1m{name}\033[0m黄経差:{longitude:5.2f}\n月相:{phase}"
+#moon_name = {0:'新月',7:'半月(上弦)',14:'満月',21:'半月(下弦)'}
+#message = "\033[1m{name}\033[0m黄経差:{longitude:5.2f}\n月相:{phase}"
 
-#moon_name = {0:'New Moon',7:'Half Moon',14:'Full Moon',21:'Half Moon'}
-#message = "\033[1m{name}\033[0mecliptic longitude:{longitude:5.2f}\n       lunar phase:{phase}"
+moon_name = {0:'New Moon',7:'Half Moon',14:'Full Moon',21:'Half Moon'}
+message = "\033[1m{name}\033[0mecliptic longitude:{longitude:5.2f}\n       lunar phase:{phase}"
 
 #朔望月を29.530589日とする
 #2013年理科年表より
